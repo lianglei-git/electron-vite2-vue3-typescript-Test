@@ -1,0 +1,93 @@
+{
+  "name": "vite2-vue3-electron",
+  "version": "0.0.0",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "dev:vue": "vite",
+    "dev:ele": "node -r ts-node/register script/build --env=development --watch",
+    "dev:all": "concurrently -n=vue,ele -c=green,blue \"npm run dev:vue\" \"npm run dev:ele\"",
+    "build:vue": "vue-tsc --noEmit && vite build",
+    "build:ele": "node -r ts-node/register script/build --env=producent",
+    "build:all": "rimraf dist && npm run build:vue && npm run build:ele && electron-builder",
+    "build": "electron-builder",
+    "serve": "vite preview",
+    "start": "vue-tsc --noEmit && vite build && electron ."
+  },
+  "build": {
+    "appId": "2838370086@qq.com",
+    "asar": false,
+    "directories": {
+      "output": "release/${version}"
+    },
+    "electronDownload": {
+      "mirror": "https://npm.taobao.org/mirrors/electron/"
+    },
+    "files": [
+      "!node_modules",
+      "dist/**"
+    ],
+    "extraResources": {
+      "from": "src/preload",
+      "to": "app/src/preload"
+    },
+    "mac": {
+      "artifactName": "${productName}_${version}.${ext}",
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}_${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false
+    }
+  },
+  "dependencies": {
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.2",
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@types/minimist": "^1.2.1",
+    "@vitejs/plugin-vue": "^1.2.1",
+    "@vue/compiler-sfc": "^3.0.5",
+    "chalk": "^4.1.1",
+    "concurrently": "^6.0.2",
+    "electron": "^12.0.4",
+    "electron-builder": "^22.10.5",
+    "electron-connect": "^0.6.3",
+    "electron-debug": "^3.2.0",
+    "electron-devtools-installer": "^3.2.0",
+    "electron-forge": "^5.2.4",
+    "electron-updater": "^4.3.8",
+    "minimist": "^1.2.5",
+    "ora": "^5.4.0",
+    "rollup-plugin-esbuild": "^4.0.1",
+    "rollup-plugin-node-externals": "^2.2.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3",
+    "vite": "^2.1.5",
+    "vue-tsc": "^0.0.24"
+  },
+  "keywords": [
+    "vite",
+    "electron",
+    "vue3",
+    "rollup",
+    "ant-design-vue"
+  ]
+}
