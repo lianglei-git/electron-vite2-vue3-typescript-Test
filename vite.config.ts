@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+ import Jsx from '@vitejs/plugin-vue-jsx'
 import {join} from 'path'
 import dotenv from 'dotenv'
 dotenv.config({path:join(__dirname, '.env')})
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), Jsx()],
   root: join(__dirname, 'src/render'),
   base: './',
   server: {

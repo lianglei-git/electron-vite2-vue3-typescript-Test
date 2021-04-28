@@ -1,6 +1,6 @@
 {
-  "name": "vite2-vue3-electron",
-  "version": "0.0.0",
+  "name": "blockCat",
+  "version": "0.0.2",
   "main": "dist/main/index.js",
   "scripts": {
     "dev:vue": "vite",
@@ -34,7 +34,8 @@
       "artifactName": "${productName}_${version}.${ext}",
       "target": [
         "dmg"
-      ]
+      ],
+      "icon": "icons/icon.icns"
     },
     "win": {
       "target": [
@@ -45,7 +46,8 @@
           ]
         }
       ],
-      "artifactName": "${productName}_${version}.${ext}"
+      "artifactName": "blockCat_${version}.${ext}",
+      "icon": "icons/icon.ico"
     },
     "nsis": {
       "oneClick": false,
@@ -58,13 +60,18 @@
     "vue": "^3.0.5"
   },
   "devDependencies": {
+    "@babel/plugin-transform-async-to-generator": "^7.13.0",
     "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-commonjs": "^18.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
+    "@types/koa": "^2.13.1",
     "@types/minimist": "^1.2.1",
     "@vitejs/plugin-vue": "^1.2.1",
+    "@vitejs/plugin-vue-jsx": "^1.1.3",
     "@vue/compiler-sfc": "^3.0.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "chalk": "^4.1.1",
     "concurrently": "^6.0.2",
     "electron": "^12.0.4",
@@ -74,13 +81,20 @@
     "electron-devtools-installer": "^3.2.0",
     "electron-forge": "^5.2.4",
     "electron-updater": "^4.3.8",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-router": "^10.0.0",
+    "koa2-cors": "^2.0.6",
     "minimist": "^1.2.5",
     "ora": "^5.4.0",
     "rollup-plugin-esbuild": "^4.0.1",
     "rollup-plugin-node-externals": "^2.2.0",
+    "sass": "^1.32.11",
+    "sass-loader": "^11.0.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3",
     "vite": "^2.1.5",
+    "vite-plugin-vue-jsx": "^0.0.4",
     "vue-tsc": "^0.0.24"
   },
   "keywords": [

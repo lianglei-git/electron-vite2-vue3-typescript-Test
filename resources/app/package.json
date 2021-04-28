@@ -1,8 +1,0 @@
-{
-  "name": "vite2-vue3-electron",
-  "version": "0.0.0",
-  "main": "dist/main/index.js",
-  "dependencies": {
-    "vue": "^3.0.5"
-  }
-}
