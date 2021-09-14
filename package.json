@@ -1,5 +1,5 @@
 {
-  "name": "blockCat",
+  "name": "sparrow",
   "version": "0.0.2",
   "main": "dist/main/index.js",
   "scripts": {
@@ -102,6 +102,7 @@
     "electron",
     "vue3",
     "rollup",
-    "ant-design-vue"
+    "ant-design-vue",
+    "electron-vue"
   ]
 }

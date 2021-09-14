@@ -1,4 +1,4 @@
-# Vue 3 + Typescript + Vite
+<!-- # Vue 3 + Typescript + Vite
 
 This template should help get you started developing with Vue 3 and Typescript in Vite.
 
@@ -24,4 +24,32 @@ Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
 2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
 3. Open `src/main.ts` in VSCode
 4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+5. Search and run "Select TypeScript version" -> "Use workspace version" -->
+
+
+
+
+# 合成构建 electron Vue3
+> 免责声明
+
+本项目是基于 Vue3.0、Typescript 、Vite 、 node 集成在Electron12.x版本的程序开发。
+本项目只是对electron和vue这些没有太多了解的进行的包装， 大佬请绕行 参考文献已经忘了 
+
+## 项目启动流程
+ - yarn  下载依赖
+ - yarn dev:all 启动程序 
+ - yarn build:all 打包程序
+
+ - `当然如果您需要单独启动node服务和vue单页面应用 不妨去pacheage.json里面看看哟 `
+
+ 附带一下[**我**](www.sparrowend.com)的blog
+ 
+![main](./shows/main.png)
+
+### PS
+此版本没有做程序自动更新，也没有做其他的一些琐碎事情， 只是简单基本几大JS库搭建的便捷应用程序包。 
+额... 由于时间此版本搭建时间至此过长， 我已经忘记是否基于node做中间层了， 但是如果需要的话， 简单的在主进程里面fork一个子进程就可以了， 或者直接通过require的方式引用，但是有进程杀死与否的弊端， 斟酌处理就好。
+
+有需要请扫码: 
+
+![main](./shows/qw.jpg)
